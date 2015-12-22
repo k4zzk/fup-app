@@ -5,8 +5,7 @@ logger = require('morgan')
 cookieParser = require('cookie-parser')
 bodyParser = require('body-parser')
 routes = require('./routes/index')
-users = require('./routes/users')
-fup = require('./routes/fup')
+v1 = require('./routes/v1')
 app = express()
 # view engine setup
 app.set 'views', path.join(__dirname, 'views')
@@ -19,8 +18,7 @@ app.use bodyParser.urlencoded(extended: false)
 app.use cookieParser()
 app.use express.static(path.join(__dirname, 'public'))
 app.use '/', routes
-app.use '/users', users
-app.use '/fup', fup
+app.use '/v1', v1
 # catch 404 and forward to error handler
 app.use (req, res, next) ->
   err = new Error('Not Found')

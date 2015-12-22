@@ -141,11 +141,6 @@ router.post '/', (req, res, next) ->
     res.send("Error!!!")
   return
 
-router.post '/test', (req, res)->
-  console.log(req.body)
-  # console.log(req)
-  res.send("test")
-
 module.exports = router
 
 # ---
